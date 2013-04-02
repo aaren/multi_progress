@@ -5,8 +5,7 @@ Well this was a success.
 
 I've got multiple processes running at once in [parallel][my-multi]
 
-TODO: link to embarassing problems post
-[my-multi]: http://aaren.github.com/embarassing
+[my-multi]: http://aaren.github.com/notes/2012/04/embarassingly_parallel_python
 
 What I want to do here is have a progress bar for each process and
 have these displayed nicely on the screen.
@@ -20,9 +19,9 @@ Writing stuff to specific places on the screen is a job for
 
 I've used blessings version 1.5 and progressbar version 2.3.
 
-[progressbar]: TODO: progressbar link
-[curses]: TODO: curses link
-[blessings]: TODO: blessings link
+[progressbar]: https://pypi.python.org/pypi/progressbar/2.3-dev
+[curses]: http://docs.python.org/2/howto/curses.html
+[blessings]: https://pypi.python.org/pypi/blessings/
 
 The main class in progressbar, ProgressBar, has an instantiation
 argument `fd=sys.stderr` that is an object with a `write(string)`
@@ -117,7 +116,7 @@ onto a list of arguments `arg_list`:
     p.map(our_function, arg_list)
     p.close()
 
-[multiprocessing]: TODO: python stdlib link
+[multiprocessing]: http://docs.python.org/2/library/multiprocessing.html
 
 In our case the function is `test_function` and the list of
 arguments is a list of locations. For example, to have a progress
