@@ -18,9 +18,11 @@ Writing stuff to specific places on the screen is a job for
 [curses][], which is messy to use. Luckily I came across
 [blessings][], which is an excellent clean wrapper around curses.
 
-[progressbar]:
-[curses]: 
-[blessings]:
+I've used blessings version 1.5 and progressbar version 2.3.
+
+[progressbar]: TODO: progressbar link
+[curses]: TODO: curses link
+[blessings]: TODO: blessings link
 
 The main class in progressbar, ProgressBar, has an instantiation
 argument `fd=sys.stderr` that is an object with a `write(string)`
@@ -152,5 +154,6 @@ I've made an [script][demo-script] that demonstrates all of the above.
 [demo-script]: TODO: link to script on github
 
 And there you go, multiple independent progress bars implemented in
-Python with not much hassle at all, thanks in large part to how easy
-[blessings][] makes curses.
+Python with not much hassle at all. This took me about 4 hours, blog
+post included, thanks in large part to how easy [blessings][] makes
+curses. 
