@@ -99,7 +99,7 @@ writer object to progressbar:
     location = (x_pos, y_pos)
     test_function(location)
 
-![TODO: image of progress bar at arbitrary position]
+![Arbitrarily positioned progress bar](https://raw.github.com/aaren/multi_progress/master/single_progress_bar.png)
 
 #### Multiprocessing ####
 
@@ -128,14 +128,15 @@ bar at the start of the line on the 2nd, 7th and 8th lines:
     p.map(test_function, locations)
     p.close()
 
-![TODO: image of parallel progress bars]
+![Parallel progress bars](https://raw.github.com/aaren/multi_progress/master/multi_progress_bar.png)
 
-I've only got two progress bars here because I've only got a two
-core processor. `Pool()` defaults to making a number of worker
+
+I've only got two active progress bars here because I've only got a
+two core processor. `Pool()` defaults to making a number of worker
 processes equal to the number of processors. Here is the same code
 run on more cores with a load more locations:
 
-![TODO: image of parallel progress bars on dad]
+![Lots of parallel progress bars](https://raw.github.com/aaren/multi_progress/master/more_multi_progress_bar.png)
 
 #### Fullscreen output ####
 
@@ -150,7 +151,7 @@ to have this behaviour like this:
 
 I've made an [script][demo-script] that demonstrates all of the above.
 
-[demo-script]: TODO: link to script on github
+[demo-script]: http://www.github.com/aaren/multi_progress
 
 And there you go, multiple independent progress bars implemented in
 Python with not much hassle at all. This took me about 4 hours, blog
