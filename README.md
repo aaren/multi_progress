@@ -1,5 +1,5 @@
-title: Multiprocessing and multiple progress bars
-date: 02/04/2013
+Multiprocessing and multiple progress bars
+------------------------------------------
 
 Well this was a success.
 
@@ -32,7 +32,6 @@ but we can supply our own writer.
 Blessings works something like this (the [documentation][blessings]
 is excellent btw):
 
-    :::python
     from blessings import Terminal
 
     term = Terminal()
@@ -47,7 +46,6 @@ is excellent btw):
 
 Progressbar works something like this:
 
-    :::python
     import time
 
     from progressbar import ProgressBar
@@ -62,7 +60,6 @@ Progressbar works something like this:
 We need to make something to connect progressbar and blessings.
 Create an object that can write like this:
 
-    :::python
     class Writer(object):
         """Create an object with a write method that writes to a
         specific place on the screen, defined at instantiation.
@@ -83,7 +80,6 @@ Create an object that can write like this:
 Then we can put our progress bar wherever we want by feeding our
 writer object to progressbar:
 
-    :::python
     def test_function(location):
         writer = Writer(location)
         pbar = ProgressBar(fd=writer)
@@ -109,7 +105,6 @@ trivial to extend this to multiprocessing.
 Basic [multiprocessing][] usage, mapping a function `our_function`
 onto a list of arguments `arg_list`:
 
-    :::python
     from multiprocessing import Pool
 
     p = Pool()
@@ -122,14 +117,12 @@ In our case the function is `test_function` and the list of
 arguments is a list of locations. For example, to have a progress
 bar at the start of the line on the 2nd, 7th and 8th lines:
 
-    :::python
     locations = [(0, 1), (0, 6), (0, 7)]
     p = Pool()
     p.map(test_function, locations)
     p.close()
 
 ![Parallel progress bars](https://raw.github.com/aaren/multi_progress/master/multi_progress_bar.png)
-
 
 I've only got two active progress bars here because I've only got a
 two core processor. `Pool()` defaults to making a number of worker
@@ -145,13 +138,12 @@ This is because blessings, unlike curses, does not force a
 fullscreen view that disappears on completion. We can tell blessings
 to have this behaviour like this:
 
-    :::python
     with term.fullscreen():
         do_the_stuff_above()
 
 I've made an [script][demo-script] that demonstrates all of the above.
 
-[demo-script]: http://www.github.com/aaren/multi_progress
+[demo-script]: http://www.github.com/aaren/multi_progress/multi_progress.py
 
 And there you go, multiple independent progress bars implemented in
 Python with not much hassle at all. This took me about 4 hours, blog
