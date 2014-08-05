@@ -157,7 +157,7 @@ with term.fullscreen():
 
 I've made an [script][demo-script] that demonstrates all of the above.
 
-[demo-script]: http://www.github.com/aaren/multi_progress/multi_progress.py
+[demo-script]: https://github.com/aaren/multi_progress/blob/master/multi_progress.py
 
 And there you go, multiple independent progress bars implemented in
 Python with not much hassle at all. This took me about 4 hours, blog
